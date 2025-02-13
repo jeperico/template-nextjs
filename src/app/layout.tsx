@@ -10,7 +10,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const test = 'test';
   const pathname = usePathname();
   return (
     <html suppressHydrationWarning lang="en">
