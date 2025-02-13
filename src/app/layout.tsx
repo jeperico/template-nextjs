@@ -4,6 +4,8 @@ import React from 'react';
 import { Suspense } from 'react';
 import '@/styles/global.css';
 import { usePathname } from 'next/navigation';
+import Header from '@/layout/Header';
+import Footer from '@/layout/Footer';
 
 export default function RootLayout({
   children,
@@ -22,8 +24,9 @@ export default function RootLayout({
             </div>
           }
         >
-          {pathname === '/login' ? null : <div>Header</div>}
+          {pathname === '/login' ? null : <Header />}
           {children}
+          {pathname === '/login' ? null : <Footer />}
         </Suspense>
       </body>
     </html>
