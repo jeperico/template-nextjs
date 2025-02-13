@@ -1,15 +1,16 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Suspense } from "react";
-import "@/styles/global.css";
-import { usePathname } from "next/navigation";
+import React from 'react';
+import { Suspense } from 'react';
+import '@/styles/global.css';
+import { usePathname } from 'next/navigation';
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const test = 'test';
   const pathname = usePathname();
   return (
     <html suppressHydrationWarning lang="en">
@@ -22,7 +23,7 @@ export default function RootLayout({
             </div>
           }
         >
-          {pathname === "/login" ? null : <div>Header</div>}
+          {pathname === '/login' ? null : <div>Header</div>}
           {children}
         </Suspense>
       </body>
