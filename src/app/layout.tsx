@@ -24,9 +24,13 @@ export default function RootLayout({
             </div>
           }
         >
-          {pathname === '/login' ? null : <Header />}
+          {pathname === '/login' || pathname === '/register' ? null : (
+            <Header />
+          )}
           {children}
-          {pathname === '/login' ? null : <Footer />}
+          {pathname === '/login' || pathname === '/register' ? null : (
+            <Footer />
+          )}
         </Suspense>
       </body>
     </html>
