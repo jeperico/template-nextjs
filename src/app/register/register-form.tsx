@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { post } from '@/providers/api';
 
 const registerFormSchema = z.object({
   name: z.string(),
@@ -35,8 +36,14 @@ const RegisterForm = () => {
     },
   });
 
-  const onSubmit = (data: RegisterFormSchema) => {
+  const onSubmit = async (data: RegisterFormSchema) => {
     console.log('data: ', data);
+    try {
+      const response = await post('profiles/register-user/', { body: data });
+      console.log('response: ', response);
+    } catch (error) {
+      console.error('Error registering user:', error);
+    }
   };
 
   return (
